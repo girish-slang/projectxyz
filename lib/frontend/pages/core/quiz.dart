@@ -1,3 +1,4 @@
+import 'package:alan_voice/alan_voice.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:get/get.dart';
@@ -11,6 +12,9 @@ class ProblemPage extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    AlanVoice.addButton(
+        "36cf10a045ad4f147daed15d057fa38b2e956eca572e1d8b807a3e2338fdd0dc/stage",
+        buttonAlign: AlanVoice.BUTTON_ALIGN_LEFT);
     final _question =
         useState(_quizController.handlerFunction(track)['question']);
 
@@ -18,7 +22,7 @@ class ProblemPage extends HookWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children:[
             Text(_question.value),
             ElevatedButton(
                 onPressed: () {
